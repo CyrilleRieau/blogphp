@@ -8,7 +8,10 @@ foreach($files as $key => $value){
            echo '<li><a href=directo/'.$value.'>'.$value.'</a>';
            $content = file_get_contents('directo/'.$value);
            echo '<p>'.$content.'</p>';
-    echo '<form action="delete.php" method="GET"><button>Delete</button></form></li>';
+    echo '<form action="delete.php" method="GET">
+    <input type="submit" name='.$value.' value="Delete">
+    <input type="hidden" name="filename" value="'.$value.'">
+    </form></li>';
     }
 }
 ;
