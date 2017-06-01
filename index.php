@@ -11,7 +11,12 @@ foreach($files as $key => $value){
     echo '<form action="delete.php" method="GET">
     <input type="submit" name='.$value.' value="Delete">
     <input type="hidden" name="filename" value="'.$value.'">
-    </form></li>';
+    </form>';
+    echo '<form action="modify.php" method="GET">
+    <input type="submit" name='.$value.' value="Modify">
+    <input type="hidden" name="filemodif" value='.$value.'>
+    </form>';
+    echo '</li>';
     }
 }
 ;
