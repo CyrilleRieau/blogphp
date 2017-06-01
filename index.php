@@ -5,7 +5,10 @@ echo '<a href="create.html" style ="text-align:right;">Formulaire </a>';
 $files= scandir('directo');
 foreach($files as $key => $value){
     if (is_file('directo/'.$value)){
-           echo '<li><a href=directo/'.$value.'>'.$value.'</a></li>';
+           echo '<li><a href=directo/'.$value.'>'.$value.'</a>';
+           $content = file_get_contents('directo/'.$value);
+           echo '<p>'.$content.'</p>';
+    echo '<form action="delete.php" method="GET"><button>Delete</button></form></li>';
     }
 }
 ;
